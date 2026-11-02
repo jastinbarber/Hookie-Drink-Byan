@@ -1,0 +1,640 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #fff8f1;
+        color: #3b2520;
+    }
+
+    /* NAVBAR */
+    nav {
+        width: 100%;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 248, 241, 0.96);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 15px rgba(80, 40, 20, 0.08);
+    }
+
+    .logo {
+        font-size: 26px;
+        font-weight: 800;
+        color: #8b4513;
+    }
+
+    .logo span {
+        color: #e89b4a;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #5a3930;
+        font-weight: 600;
+        margin-left: 25px;
+        transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+        color: #e89b4a;
+    }
+
+    /* HERO */
+    .hero {
+        min-height: 65vh;
+        padding: 80px 8%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+
+        background:
+            radial-gradient(circle at 85% 20%, #ffd9a8 0, transparent 25%),
+            radial-gradient(circle at 10% 80%, #ffe8d2 0, transparent 30%),
+            #fff8f1;
+    }
+
+    .hero-text {
+        max-width: 650px;
+    }
+
+    .badge {
+        display: inline-block;
+        background: #ffe0bd;
+        color: #8b4513;
+        padding: 8px 18px;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 6vw, 70px);
+        line-height: 1.05;
+        color: #4a2921;
+        margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+        color: #d9822b;
+    }
+
+    .hero p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #76584d;
+    }
+
+    /* ILUSTRASI KONTAK */
+    .contact-art {
+        width: 330px;
+        height: 300px;
+        background: linear-gradient(145deg, #d9822b, #8b4513);
+        border-radius: 40px;
+        position: relative;
+        box-shadow: 0 25px 50px rgba(113, 58, 24, 0.22);
+        transform: rotate(3deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .phone {
+        width: 125px;
+        height: 210px;
+        background: #fff8f1;
+        border: 6px solid #4a2921;
+        border-radius: 25px;
+        position: relative;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+    }
+
+    .phone::before {
+        content: "";
+        position: absolute;
+        width: 45px;
+        height: 6px;
+        background: #4a2921;
+        border-radius: 10px;
+        top: 10px;
+        left: 34px;
+    }
+
+    .phone-screen {
+        position: absolute;
+        top: 35px;
+        left: 10px;
+        right: 10px;
+        bottom: 12px;
+        background: #ffe4c7;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .phone-screen .icon {
+        font-size: 42px;
+    }
+
+    .phone-screen strong {
+        color: #8b4513;
+        font-size: 14px;
+    }
+
+    /* CONTACT SECTION */
+    .contact-section {
+        padding: 100px 8%;
+        background: white;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 55px;
+    }
+
+    .section-title small {
+        color: #d9822b;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    .section-title h2 {
+        font-size: 42px;
+        margin-top: 10px;
+        color: #4a2921;
+    }
+
+    .section-title p {
+        max-width: 600px;
+        margin: 15px auto 0;
+        color: #76584d;
+        line-height: 1.7;
+    }
+
+    /* CONTACT CARDS */
+    .contact-container {
+        max-width: 1000px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .contact-card {
+        padding: 35px 25px;
+        text-align: center;
+        background: #fff8f1;
+        border: 1px solid #f5dfca;
+        border-radius: 25px;
+        transition: 0.3s;
+    }
+
+    .contact-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(100, 50, 20, 0.12);
+    }
+
+    .contact-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        background: #ffe0bd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+    }
+
+    .contact-card h3 {
+        font-size: 20px;
+        color: #4a2921;
+        margin-bottom: 8px;
+    }
+
+    .contact-card p {
+        color: #80645a;
+        font-size: 15px;
+        margin-bottom: 18px;
+    }
+
+    .contact-card a {
+        display: inline-block;
+        text-decoration: none;
+        color: #d9822b;
+        font-weight: 700;
+        transition: 0.3s;
+    }
+
+    .contact-card a:hover {
+        color: #8b4513;
+    }
+
+    /* PESAN */
+    .message {
+        padding: 100px 8%;
+        background: #4a2921;
+        color: white;
+    }
+
+    .message-container {
+        max-width: 900px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .message h2 {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+    .message p {
+        color: #e5cec1;
+        line-height: 1.8;
+        font-size: 16px;
+    }
+
+    .message-box {
+        margin-top: 40px;
+        padding: 35px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 25px;
+    }
+
+    .message-box p {
+        color: white;
+        font-size: 21px;
+        font-weight: 600;
+    }
+
+    .message-box span {
+        display: block;
+        margin-top: 12px;
+        color: #f3b06a;
+        font-size: 14px;
+    }
+
+    /* CTA */
+    .cta {
+        padding: 90px 8%;
+        text-align: center;
+        background: #fff8f1;
+    }
+
+    .cta h2 {
+        font-size: 38px;
+        color: #4a2921;
+        margin-bottom: 15px;
+    }
+
+    .cta p {
+        color: #72574d;
+        line-height: 1.8;
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .cta-buttons {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 13px 25px;
+        background: #d9822b;
+        color: white;
+        text-decoration: none;
+        border-radius: 14px;
+        font-weight: 700;
+        transition: 0.3s;
+    }
+
+    .cta-button:hover {
+        background: #b96820;
+        transform: translateY(-3px);
+    }
+
+    .cta-button.secondary {
+        background: #4a2921;
+    }
+
+    .cta-button.secondary:hover {
+        background: #2e1a15;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 35px;
+        text-align: center;
+        background: #2e1a15;
+        color: #d9c1b6;
+    }
+
+    footer strong {
+        color: white;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 850px) {
+
+        .hero {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .contact-container {
+            grid-template-columns: 1fr;
+            max-width: 450px;
+        }
+
+    }
+
+    @media (max-width: 768px) {
+
+        nav {
+            padding: 18px 5%;
+        }
+
+        nav a {
+            display: none;
+        }
+
+        .hero {
+            padding: 60px 7%;
+        }
+
+        .contact-art {
+            width: 280px;
+            height: 270px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+        }
+
+        .message h2,
+        .cta h2 {
+            font-size: 30px;
+        }
+
+    }
+</style>
+
+</head> <body>
+<!-- NAVBAR -->
+<nav>
+
+    <div class="logo">
+        Hookie<span>Drink.</span>
+    </div>
+
+    <div>
+        <a href="index.html">Home</a>
+        <a href="toko.html">Toko</a>
+        <a href="index.html#cerita">Cerita Kami</a>
+        <a href="kontak.html" class="active">Kontak</a>
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-text">
+
+        <span class="badge">
+            📱 Let's Stay Connected
+        </span>
+
+        <h1>
+            Yuk, Tetap
+            <span>Terhubung!</span>
+        </h1>
+
+        <p>
+            Punya pertanyaan, ingin memberikan masukan,
+            atau ingin memesan Hookie Drink?
+            Jangan ragu untuk menghubungi kami melalui
+            kontak yang tersedia.
+        </p>
+
+    </div>
+
+
+    <div class="contact-art">
+
+        <div class="phone">
+
+            <div class="phone-screen">
+
+                <div class="icon">
+                    🥤
+                </div>
+
+                <strong>
+                    Hookie Drink
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact-section">
+
+    <div class="section-title">
+
+        <small>Contact Us</small>
+
+        <h2>Hubungi Hookie Drink</h2>
+
+        <p>
+            Kamu bisa menghubungi Hookie Drink melalui
+            Instagram, WhatsApp/telepon, atau LINE.
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+        <!-- INSTAGRAM -->
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                📸
+            </div>
+
+            <h3>Instagram</h3>
+
+            <p>
+                Follow dan lihat kegiatan terbaru kami.
+            </p>
+
+            <a
+                href="https://instagram.com/muh.abyanramadhan"
+                target="_blank"
+            >
+                @muh.abyanramadhan →
+            </a>
+
+        </div>
+
+
+        <!-- TELEPON -->
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                📞
+            </div>
+
+            <h3>No. Telepon</h3>
+
+            <p>
+                Hubungi kami untuk pertanyaan
+                atau pemesanan.
+            </p>
+
+            <a href="tel:081321448321">
+                0813-2144-8321 →
+            </a>
+
+        </div>
+
+
+        <!-- LINE -->
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                💬
+            </div>
+
+            <h3>LINE</h3>
+
+            <p>
+                Kamu juga bisa menghubungi kami
+                melalui LINE.
+            </p>
+
+            <a href="https://line.me/ti/p/~AByan" target="_blank">
+                @AByan →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PESAN -->
+<section class="message">
+
+    <div class="message-container">
+
+        <h2>
+            Ada yang Mau Ditanyakan? 🧡
+        </h2>
+
+        <p>
+            Jangan sungkan untuk menghubungi kami.
+            Setiap pertanyaan, saran, dan dukungan
+            dari kalian sangat berarti bagi perjalanan
+            Hookie Drink.
+        </p>
+
+
+        <div class="message-box">
+
+            <p>
+                “Satu pesan kecil dari kamu,
+                bisa menjadi semangat besar untuk kami.”
+            </p>
+
+            <span>
+                — Hookie Drink —
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+
+    <h2>
+        Mau Kenal Hookie Drink Lebih Dekat?
+    </h2>
+
+    <p>
+        Setelah mengenal kami, yuk lihat cerita
+        bagaimana Hookie Drink dimulai dan berkembang
+        dari sebuah usaha kecil.
+    </p>
+
+    <div class="cta-buttons">
+
+        <a
+            href="index.html#cerita"
+            class="cta-button"
+        >
+            Cerita Kami →
+        </a>
+
+        <a
+            href="toko.html"
+            class="cta-button secondary"
+        >
+            Tentang Toko →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2023–2026 <strong>Hookie Drink</strong>.
+        Made with love & a little bit of courage. 🧡
+    </p>
+
+</footer>
+
+</body> </html>

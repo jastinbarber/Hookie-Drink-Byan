@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profil - Hookie Drink</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fff8f1;
+            color: #4a2921;
+        }
+
+        /* =====================
+           HEADER
+        ===================== */
+
+        .profile-header {
+            padding: 55px 8%;
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    #ffe3bd,
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    #f5c58f,
+                    transparent 25%
+                ),
+                #fff8f1;
+        }
+
+        .profile-header small {
+            color: #d9822b;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .profile-header h1 {
+            margin-top: 8px;
+            font-size: clamp(35px, 6vw, 55px);
+            color: #4a2921;
+        }
+
+        .profile-header h1 span {
+            color: #d9822b;
+        }
+
+        .profile-header p {
+            max-width: 650px;
+            margin: 15px auto 0;
+            color: #76584d;
+            line-height: 1.8;
+        }
+
+
+        /* =====================
+           PROFILE
+        ===================== */
+
+        .profile {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 8% 80px;
+
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+
+        /* FOTO */
+
+        .photo-card {
+            position: relative;
+
+            padding: 12px;
+
+            background: white;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 20px 50px rgba(75, 40, 20, 0.15);
+
+            transform: rotate(-2deg);
+
+            transition: 0.3s ease;
+        }
+
+        .photo-card:hover {
+            transform: rotate(0deg) translateY(-8px);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 400px;
+
+            object-fit: cover;
+
+            display: block;
+
+            border-radius: 22px;
+        }
+
+        .photo-label {
+            position: absolute;
+
+            bottom: 25px;
+            left: 25px;
+
+            padding: 10px 18px;
+
+            background: rgba(74, 41, 33, 0.9);
+
+            color: white;
+
+            border-radius: 50px;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        /* TEXT PROFILE */
+
+        .profile-text h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #4a2921;
+        }
+
+        .profile-text > p {
+            color: #76584d;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+
+        /* =====================
+           VISI & MISI
+        ===================== */
+
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px 8% 80px;
+        }
+
+        .section-title {
+            margin-bottom: 35px;
+        }
+
+        .section-title span {
+            color: #d9822b;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            margin-top: 7px;
+            font-size: 36px;
+            color: #4a2921;
+        }
+
+
+        /* VISI CARD */
+
+        .vision-card {
+            padding: 35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #8b4513,
+                    #c8752c
+                );
+
+            color: white;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 15px 35px rgba(120, 60, 20, 0.2);
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision-card::after {
+            content: "VISION";
+
+            position: absolute;
+
+            right: -15px;
+            bottom: -25px;
+
+            font-size: 80px;
+
+            font-weight: 800;
+
+            color: rgba(255,255,255,0.08);
+        }
+
+        .vision-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .vision-card p {
+            line-height: 1.9;
+            color: #fff1e3;
+        }
+
+
+        /* MISI */
+
+        .mission-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .mission-card {
+            padding: 28px;
+
+            background: white;
+
+            border: 1px solid #f1dfd0;
+
+            border-radius: 22px;
+
+            transition: 0.3s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 15px 35px rgba(70, 35, 15, 0.1);
+        }
+
+        .mission-number {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 15px;
+
+            border-radius: 14px;
+
+            background: #ffe1bd;
+
+            color: #a65c25;
+
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .mission-card h3 {
+            margin-bottom: 10px;
+
+            color: #5a3327;
+
+            font-size: 19px;
+        }
+
+        .mission-card p {
+            color: #76584d;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================
+           MOTO
+        ===================== */
+
+        .motto {
+            margin-top: 20px;
+
+            padding: 70px 8%;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0,
+                    #6b3929,
+                    transparent 60%
+                ),
+                #2d1913;
+
+            color: white;
+        }
+
+        .motto-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .motto h2 {
+            font-size: 14px;
+
+            color: #f1ae69;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+        .motto p {
+            max-width: 850px;
+
+            margin: auto;
+
+            font-size: clamp(22px, 4vw, 36px);
+
+            line-height: 1.5;
+
+            font-weight: 700;
+        }
+
+        .motto p span {
+            color: #f1ae69;
+        }
+
+
+        /* =====================
+           RESPONSIVE
+        ===================== */
+
+        @media (max-width: 800px) {
+
+            .profile {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+
+                padding-top: 10px;
+            }
+
+            .photo-card {
+                max-width: 450px;
+
+                margin: auto;
+            }
+
+            .photo-card img {
+                height: 350px;
+            }
+
+            .profile-text {
+                text-align: center;
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                text-align: center;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .profile-header {
+                padding: 40px 6%;
+            }
+
+            .profile {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .section {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .photo-card img {
+                height: 300px;
+            }
+
+            .vision-card,
+            .mission-card {
+                padding: 25px;
+            }
+
+            .motto {
+                padding: 55px 6%;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- HEADER PROFIL -->
+
+    <section class="profile-header">
+
+        <small>About Us</small>
+
+        <h1>Profil <span>Hookie Drink</span></h1>
+
+        <p>
+            Mengenal lebih dekat visi, misi, dan semangat
+            yang menjadi bagian dari perjalanan Hookie Drink.
+        </p>
+
+    </section>
+
+
+    <!-- FOTO + DESKRIPSI -->
+
+    <section class="profile">
+
+        <div class="photo-card">
+
+            <img
+                src="../img abyan/WhatsApp Image 2026-09-01 at 09.45.51.jpeg"
+                alt="Hookie Drink">
+
+            <div class="photo-label">
+                🥤 Hookie Drink
+            </div>
+
+        </div>
+
+
+        <div class="profile-text">
+
+            <h2>Lebih Dari Sekadar Minuman</h2>
+
+            <p>
+                Hookie Drink hadir dengan semangat untuk memberikan
+                minuman yang menyegarkan, berkualitas, dan memiliki
+                rasa yang dapat dinikmati oleh berbagai kalangan.
+            </p>
+
+            <p>
+                Kami percaya bahwa setiap produk memiliki cerita.
+                Karena itu, Hookie Drink terus berusaha berkembang,
+                berinovasi, dan memberikan pengalaman terbaik untuk
+                setiap pelanggan.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- VISI -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <span>OUR VISION</span>
+
+            <h2>Visi Kami</h2>
+
+        </div>
+
+
+        <div class="vision-card">
+
+            <h3>🎯 Visi Hookie Drink</h3>
+
+            <p>
+                Menjadi merek minuman pilihan utama yang menghadirkan
+                kesegaran berkualitas tinggi, menginspirasi gaya hidup
+                sehat, dan selalu terdepan dalam inovasi rasa di hati
+                konsumen.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MISI -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <span>OUR MISSION</span>
+
+            <h2>Misi Kami</h2>
+
+        </div>
+
+
+        <div class="mission-grid">
+
+
+            <!-- MISI 1 -->
+
+            <div class="mission-card">
+
+                <div class="mission-number">
+                    01
+                </div>
+
+                <h3>🌱 Kualitas Unggul</h3>
+
+                <p>
+                    Menggunakan bahan-bahan pilihan alami yang
+                    higienis, aman, dan terjaga kualitasnya
+                    di setiap sajian.
+                </p>
+
+            </div>
+
+
+            <!-- MISI 2 -->
+
+            <div class="mission-card">
+
+                <div class="mission-number">
+                    02
+                </div>
+
+                <h3>💡 Inovasi Berkelanjutan</h3>
+
+                <p>
+                    Terus mengembangkan varian rasa dan konsep
+                    produk yang kreatif demi mengikuti tren
+                    serta kebutuhan pasar.
+                </p>
+
+            </div>
+
+
+            <!-- MISI 3 -->
+
+            <div class="mission-card">
+
+                <div class="mission-number">
+                    03
+                </div>
+
+                <h3>❤️ Kepuasan Pelanggan</h3>
+
+                <p>
+                    Memberikan pelayanan terbaik yang cepat,
+                    ramah, dan memuaskan untuk menciptakan
+                    pengalaman menikmati minuman yang berkesan.
+                </p>
+
+            </div>
+
+
+            <!-- MISI 4 -->
+
+            <div class="mission-card">
+
+                <div class="mission-number">
+                    04
+                </div>
+
+                <h3>🌍 Pertumbuhan Bertanggung Jawab</h3>
+
+                <p>
+                    Menjalankan bisnis yang ramah lingkungan
+                    serta memberikan dampak positif bagi
+                    komunitas sekitar.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MOTO -->
+
+    <section class="motto">
+
+        <div class="motto-icon">
+            ✨
+        </div>
+
+        <h2>Our Motto</h2>
+
+        <p>
+            “Tak perlu tunggu hebat untuk memulai,
+            tapi <span>mulailah untuk menjadi hebat!</span>”
+        </p>
+
+    </section>
+
+</body>
+
+</html>

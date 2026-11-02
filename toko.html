@@ -1,0 +1,740 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #fff8f1;
+        color: #3b2520;
+    }
+
+    /* NAVBAR */
+    nav {
+        width: 100%;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 248, 241, 0.96);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 15px rgba(80, 40, 20, 0.08);
+    }
+
+    .logo {
+        font-size: 26px;
+        font-weight: 800;
+        color: #8b4513;
+    }
+
+    .logo span {
+        color: #e89b4a;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #5a3930;
+        font-weight: 600;
+        margin-left: 25px;
+        transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+        color: #e89b4a;
+    }
+
+    /* HERO */
+    .hero {
+        min-height: 70vh;
+        padding: 80px 8%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+
+        background:
+            radial-gradient(circle at 85% 20%, #ffd9a8 0, transparent 25%),
+            radial-gradient(circle at 10% 80%, #ffe8d2 0, transparent 30%),
+            #fff8f1;
+    }
+
+    .hero-text {
+        max-width: 650px;
+    }
+
+    .badge {
+        display: inline-block;
+        background: #ffe0bd;
+        color: #8b4513;
+        padding: 8px 18px;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 6vw, 70px);
+        line-height: 1.05;
+        color: #4a2921;
+        margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+        color: #d9822b;
+    }
+
+    .hero p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #76584d;
+    }
+
+    /* ILUSTRASI TOKO */
+    .store-illustration {
+        width: 380px;
+        height: 330px;
+        background: #fff;
+        border-radius: 35px;
+        padding: 25px;
+        box-shadow: 0 25px 50px rgba(100, 50, 20, 0.15);
+        transform: rotate(2deg);
+    }
+
+    .store-top {
+        height: 55px;
+        background: #d9822b;
+        border-radius: 18px 18px 5px 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 800;
+        font-size: 22px;
+    }
+
+    .store-awning {
+        height: 35px;
+        background: repeating-linear-gradient(
+            90deg,
+            #fff 0,
+            #fff 45px,
+            #f2b36c 45px,
+            #f2b36c 90px
+        );
+        border-radius: 0 0 10px 10px;
+    }
+
+    .store-window {
+        margin-top: 15px;
+        height: 130px;
+        background: #f7dfca;
+        border: 5px solid #8b4513;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .store-cup {
+        width: 50px;
+        height: 80px;
+        border: 3px solid #8b4513;
+        border-radius: 8px 8px 15px 15px;
+        background: #d9822b;
+        position: relative;
+    }
+
+    .store-cup::before {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 45px;
+        background: #8b4513;
+        top: -35px;
+        left: 28px;
+        transform: rotate(5deg);
+    }
+
+    .store-door {
+        width: 70px;
+        height: 115px;
+        background: #8b4513;
+        border-radius: 8px 8px 0 0;
+        position: relative;
+    }
+
+    .store-door::after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #f7c17e;
+        right: 10px;
+        top: 58px;
+    }
+
+    /* SECTION */
+    .section {
+        padding: 100px 8%;
+        background: white;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 55px;
+    }
+
+    .section-title small {
+        color: #d9822b;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    .section-title h2 {
+        font-size: 42px;
+        margin-top: 10px;
+        color: #4a2921;
+    }
+
+    /* CERITA TOKO */
+    .story {
+        max-width: 1000px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .story-card {
+        padding: 35px;
+        background: #fff8f1;
+        border: 1px solid #f5dfca;
+        border-radius: 25px;
+        transition: 0.3s;
+    }
+
+    .story-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 15px 35px rgba(100, 50, 20, 0.1);
+    }
+
+    .story-card .icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+    .story-card h3 {
+        color: #a85d27;
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .story-card p {
+        color: #72574d;
+        line-height: 1.9;
+        font-size: 15px;
+    }
+
+    /* NILAI TOKO */
+    .values {
+        padding: 100px 8%;
+        background: #4a2921;
+        color: white;
+    }
+
+    .values .section-title h2 {
+        color: white;
+    }
+
+    .values .section-title small {
+        color: #f3a65e;
+    }
+
+    .values .section-title p {
+        color: #dfc8bc;
+        margin-top: 12px;
+    }
+
+    .value-container {
+        max-width: 1000px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .value-card {
+        background: white;
+        color: #4a2921;
+        padding: 35px 25px;
+        text-align: center;
+        border-radius: 25px;
+        transition: 0.3s;
+    }
+
+    .value-card:hover {
+        transform: translateY(-8px);
+    }
+
+    .value-card .icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+
+    .value-card h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .value-card p {
+        color: #72574d;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* SUASANA */
+    .atmosphere {
+        padding: 100px 8%;
+        background: #fff8f1;
+    }
+
+    .atmosphere-container {
+        max-width: 1000px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .atmosphere-text {
+        flex: 1;
+    }
+
+    .atmosphere-text h2 {
+        font-size: 38px;
+        color: #4a2921;
+        margin-bottom: 20px;
+    }
+
+    .atmosphere-text p {
+        color: #72574d;
+        line-height: 1.9;
+        margin-bottom: 15px;
+    }
+
+    .atmosphere-box {
+        flex: 1;
+        min-height: 300px;
+        border-radius: 30px;
+        background:
+            linear-gradient(
+                rgba(74, 41, 33, 0.2),
+                rgba(74, 41, 33, 0.2)
+            ),
+            linear-gradient(135deg, #f3b46e, #8b4513);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 20px 40px rgba(80, 40, 20, 0.15);
+    }
+
+    .atmosphere-box span {
+        font-size: 90px;
+    }
+
+    /* CTA */
+    .cta {
+        padding: 90px 8%;
+        background: white;
+        text-align: center;
+    }
+
+    .cta h2 {
+        font-size: 40px;
+        color: #4a2921;
+        margin-bottom: 15px;
+    }
+
+    .cta p {
+        max-width: 650px;
+        margin: auto;
+        color: #72574d;
+        line-height: 1.8;
+    }
+
+    .cta-button {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 14px 30px;
+        background: #d9822b;
+        color: white;
+        text-decoration: none;
+        border-radius: 15px;
+        font-weight: 700;
+        transition: 0.3s;
+    }
+
+    .cta-button:hover {
+        background: #b96820;
+        transform: translateY(-3px);
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 35px;
+        text-align: center;
+        background: #2e1a15;
+        color: #d9c1b6;
+    }
+
+    footer strong {
+        color: white;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 850px) {
+
+        .hero {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .store-illustration {
+            width: 320px;
+        }
+
+        .story {
+            grid-template-columns: 1fr;
+        }
+
+        .value-container {
+            grid-template-columns: 1fr;
+            max-width: 450px;
+        }
+
+        .atmosphere-container {
+            flex-direction: column;
+        }
+
+        .atmosphere-text {
+            text-align: center;
+        }
+
+    }
+
+    @media (max-width: 768px) {
+
+        nav {
+            padding: 18px 5%;
+        }
+
+        nav a {
+            display: none;
+        }
+
+        .hero {
+            padding: 60px 7%;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+        }
+
+        .atmosphere-text h2 {
+            font-size: 32px;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+        }
+
+    }
+</style>
+
+</head> <body>
+<!-- NAVBAR -->
+<nav>
+
+    <div class="logo">
+        Hookie<span>Drink.</span>
+    </div>
+
+    <div>
+        <a href="index.html">Home</a>
+        <a href="toko.html" class="active">Toko</a>
+        <a href="index.html#cerita">Cerita Kami</a>
+        <a href="index.html#rasa">Varian Rasa</a>
+    </div>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-text">
+
+        <span class="badge">
+            🏪 Tentang Toko Kami
+        </span>
+
+        <h1>
+            Lebih dari Sekadar
+            <span>Toko Minuman.</span>
+        </h1>
+
+        <p>
+            Hookie Drink adalah usaha kecil yang dibangun dari
+            sebuah ide sederhana dan berkembang melalui pengalaman.
+            Bagi kami, toko bukan hanya tempat menjual minuman,
+            tetapi juga tempat untuk belajar, mencoba, dan
+            menciptakan sesuatu yang berarti.
+        </p>
+
+    </div>
+
+    <!-- ILUSTRASI -->
+    <div class="store-illustration">
+
+        <div class="store-top">
+            HOOKIE DRINK
+        </div>
+
+        <div class="store-awning"></div>
+
+        <div class="store-window">
+
+            <div class="store-cup"></div>
+
+            <div class="store-door"></div>
+
+            <div class="store-cup"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TENTANG TOKO -->
+<section class="section">
+
+    <div class="section-title">
+
+        <small>About Our Store</small>
+
+        <h2>Tentang Hookie Drink</h2>
+
+    </div>
+
+    <div class="story">
+
+        <div class="story-card">
+
+            <div class="icon">🏪</div>
+
+            <h3>Toko yang Berawal dari Rumah</h3>
+
+            <p>
+                Hookie Drink berawal dari usaha kecil yang
+                dikerjakan dengan sederhana. Tidak langsung
+                memiliki toko besar, semuanya dimulai dari
+                lingkungan terdekat dan orang-orang yang
+                mengenal produk kami.
+            </p>
+
+        </div>
+
+        <div class="story-card">
+
+            <div class="icon">🥤</div>
+
+            <h3>Tempat Membuat Minuman</h3>
+
+            <p>
+                Di sinilah minuman Hookie Drink dipersiapkan.
+                Setiap pesanan menjadi bagian dari proses belajar
+                untuk membuat minuman yang semakin baik dan
+                memberikan pengalaman yang menyenangkan bagi
+                pelanggan.
+            </p>
+
+        </div>
+
+        <div class="story-card">
+
+            <div class="icon">💡</div>
+
+            <h3>Tempat Belajar Berjualan</h3>
+
+            <p>
+                Hookie Drink juga menjadi tempat untuk belajar
+                banyak hal, mulai dari menyiapkan produk,
+                mengatur pesanan, mengenalkan produk kepada orang
+                lain, hingga memahami bagaimana menjalankan
+                usaha kecil.
+            </p>
+
+        </div>
+
+        <div class="story-card">
+
+            <div class="icon">🧡</div>
+
+            <h3>Dibangun dengan Semangat</h3>
+
+            <p>
+                Walaupun dimulai dari skala kecil, Hookie Drink
+                dijalankan dengan semangat untuk terus berkembang.
+                Setiap pembelian, masukan, dan dukungan dari
+                pelanggan menjadi bagian dari perjalanan toko ini.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- NILAI TOKO -->
+<section class="values">
+
+    <div class="section-title">
+
+        <small>Our Values</small>
+
+        <h2>Apa yang Kami Jaga?</h2>
+
+        <p>
+            Hal-hal sederhana yang menjadi bagian dari Hookie Drink.
+        </p>
+
+    </div>
+
+    <div class="value-container">
+
+        <div class="value-card">
+
+            <div class="icon">❤️</div>
+
+            <h3>Pelayanan</h3>
+
+            <p>
+                Kami ingin setiap pelanggan merasa nyaman
+                dan dihargai ketika berinteraksi dengan
+                Hookie Drink.
+            </p>
+
+        </div>
+
+        <div class="value-card">
+
+            <div class="icon">✨</div>
+
+            <h3>Kreativitas</h3>
+
+            <p>
+                Terus mencoba ide baru dan mengembangkan
+                produk menjadi bagian dari perjalanan
+                Hookie Drink.
+            </p>
+
+        </div>
+
+        <div class="value-card">
+
+            <div class="icon">🌱</div>
+
+            <h3>Berkembang</h3>
+
+            <p>
+                Kami percaya bahwa usaha kecil juga bisa
+                berkembang selama terus belajar dan
+                berani mencoba.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SUASANA TOKO -->
+<section class="atmosphere">
+
+    <div class="atmosphere-container">
+
+        <div class="atmosphere-text">
+
+            <h2>
+                Kecil Tokonya,
+                Besar Ceritanya.
+            </h2>
+
+            <p>
+                Hookie Drink mungkin dimulai dari sesuatu yang
+                sederhana, tetapi di balik setiap botol ada proses,
+                usaha, dan cerita.
+            </p>
+
+            <p>
+                Dari menyiapkan minuman, memasang stiker,
+                membawa produk ke sekolah, sampai melayani
+                pelanggan, semuanya menjadi pengalaman yang
+                membuat Hookie Drink terus berkembang.
+            </p>
+
+        </div>
+
+        <div class="atmosphere-box">
+
+            <span>🥤🧡</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta">
+
+    <h2>
+        Yuk, Kenal Lebih Dekat!
+    </h2>
+
+    <p>
+        Ingin tahu bagaimana perjalanan Hookie Drink dimulai?
+        Cerita kami masih panjang dan setiap bagian memiliki
+        pengalaman tersendiri.
+    </p>
+
+    <a href="index.html#cerita" class="cta-button">
+        Baca Cerita Kami →
+    </a>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2023–2026 <strong>Hookie Drink</strong>.
+        Made with love & a little bit of courage. 🧡
+    </p>
+
+</footer>
